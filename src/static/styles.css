@@ -28,16 +28,27 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 main {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 30px;
   justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #signup-container {
+    order: 1;
+    max-width: 350px;
+  }
+  #activities-container {
+    order: 2;
+    max-width: 600px;
   }
 }
 
@@ -47,7 +58,8 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  margin-bottom: 20px;
 }
 
 section h3 {
@@ -110,21 +122,24 @@ section h3 {
   margin-right: 8px;
 }
 
-.delete-btn {
-  background: none;
+
+.register-btn {
+  background-color: #43a047;
+  color: white;
   border: none;
-  color: #c62828;
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
-  border-radius: 3px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+  width: 100%;
+  display: block;
 }
 
-.delete-btn:hover {
-  background-color: #ffebee;
+.register-btn:hover {
+  background-color: #388e3c;
 }
-
 .participants-section p {
   color: #777;
   font-style: italic;
